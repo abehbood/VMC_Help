@@ -29,11 +29,11 @@ Describes the data type of the twiddle factors of the transform. It must be `cin
 * The twiddle factor data type must be an integer type if the input/output data type is an integer type.
 * The twiddle factor data type must be `cfloat` if the input/output data type is a float type.
 
-#### Point Size (FFT Size)
+#### FFT Size
 This is an unsigned integer which describes the point size of the transformation. This must be 2^N, where N is in the range 4 to 16 inclusive.
 
 #### Input Window Size (Number of Samples)
-Describes the total number of samples used as an input to the FFT block on all the ports. This parameter should be an integer multiple of the _Point Size_, in which case multiple FFT iterations will be performed on a given input window. This reduces the number of times the kernel needs to be triggered and as a result the overhead incurred due to triggering the kernel is reduced and overall throughput increases. This parameter must be in the range of 2^4 and 2^16, inclusive. 
+Describes the total number of samples used as an input to the FFT block on all the ports. This parameter should be an integer multiple of the _FFT SIZE_, in which case multiple FFT iterations will be performed on a given input window. This reduces the number of times the kernel needs to be triggered and as a result the overhead incurred due to triggering the kernel is reduced and overall throughput increases. This parameter must be in the range of 2^4 and 2^16, inclusive. 
 
 #### Scale Output Down by 2^
 Describes the power of 2 shift down applied before output. For _cfloat_ data type, the value for this parameter must be zero. 
